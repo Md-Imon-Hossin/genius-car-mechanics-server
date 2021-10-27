@@ -47,7 +47,6 @@ async function run (){
         console.log(id);
         const query = { _id: ObjectId (id)};
         const result = await servicesCollection.deleteOne(query);
-        
         res.json(result)
     })
        
@@ -61,6 +60,9 @@ run().catch(console.dir);
 
 app.get('/',(req,res)=>{
     res.send('Running Genius Server')
+})
+app. get('/hello',(req,res)=>{
+    res.send('Hello World !')
 })
 app.listen(port,()=>{
     console.log('Running Genius Server On Port',port)
